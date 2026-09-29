@@ -39,3 +39,13 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+## Vorylen Mobile repository
+
+Expo Router mobile client of the shared Vorylen API.
+
+Commands: `npm ci; npm run lint; npm run typecheck`.
+
+Mobile artifacts use Expo/EAS, not Vercel. Preserve existing application identifiers and secure credential storage. Follow the version-specific Expo guidance above.
+
+This is an independent Git repository. Keep reusable domain logic in the platform API and use public contracts across repositories. Keep credentials and generated dependencies/builds out of commits. Database backfills and production migration are separate from application builds.
